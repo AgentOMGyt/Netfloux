@@ -83,14 +83,14 @@ window.addEventListener('load', () => {
 setInterval(function() {
     var Image_Id = document.querySelector('.likeimg');
     var Image_Id2 = document.querySelector('.favimg');
-            if (localStorage.getItem('like?') === 'yes') {
+            if (sessionStorage.getItem('like?') === 'yes') {
                 Image_Id.src = "pouceup.png";
             }
             else {
                 Image_Id.src = "pouce.png";
             }
 
-            if (localStorage.getItem('fav?') === 'yes') {
+            if (sessionStorage.getItem('fav?') === 'yes') {
                 Image_Id2.src = "favup.png";
             }
             else {
@@ -102,21 +102,21 @@ setInterval(function() {
 
         function likeclick() {
             var Image_Id = document.querySelector('.likeimg');
-            if (localStorage.getItem('like?') === 'no') {
-                localStorage.setItem('like?','yes');
+            if (sessionStorage.getItem('like?') === 'no') {
+                sessionStorage.setItem('like?','yes');
             }
             else {
-                localStorage.setItem('like?','no');
+                sessionStorage.setItem('like?','no');
             }
         }
 
         function favclick() {
             var Image_Id = document.querySelector('.favimg');
-            if (localStorage.getItem('fav?') === 'no') {
-                localStorage.setItem('fav?','yes');
+            if (sessionStorage.getItem('fav?') === 'no') {
+                sessionStorage.setItem('fav?','yes');
             }
             else {
-                localStorage.setItem('fav?','no');
+                sessionStorage.setItem('fav?','no');
             }
         }
 
