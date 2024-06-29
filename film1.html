@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <style></style>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var contentElement = document.getElementById('container1');
+    contentElement.classList.add('start-animation'); // Ajoutez une classe pour démarrer l'animation
+});
+window.addEventListener('load', () => {
+            // Ajoutez la classe "show" au texte pour déclencher la transition
+            document.querySelector('#intro').classList.add('show');
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    const link = document.querySelector('#icon1');
+    const myElement = document.querySelector('#container5');
+    const myElement1 = document.querySelector('#test');
+    const myElement2 = document.querySelector('#desc');
+    const myElement3 = document.querySelector('#titlefilm');
+    const myElement4 = document.querySelector('.saisonselect');
+    const myElement5 = document.querySelector('.iconimg');
+
+    link.addEventListener('click', function() {
+        // Change la couleur de fond de la div (par exemple, en blanc)
+        myElement.classList.toggle('dark');
+        myElement1.classList.toggle('dark');
+        myElement2.classList.toggle('dark');
+        myElement3.classList.toggle('dark');
+        myElement4.classList.toggle('dark');
+        myElement5.classList.toggle('dark');
+        link.classList.toggle('dark');
+        
+    });
+});
+        function likeclick() {
+            var Image_Id = document.querySelector('.likeimg');
+            if (Image_Id.src.match("pouce.png")) {
+                Image_Id.src = "pouceup.png";
+            }
+            else {
+                Image_Id.src = "pouce.png";
+            }
+        }
+
+        function favclick() {
+            var Image_Id = document.querySelector('.favimg');
+            if (Image_Id.src.match("fav.png")) {
+                Image_Id.src = "favup.png";
+            }
+            else {
+                Image_Id.src = "fav.png";
+            }
+        }
+
+window.onload = function() {
+            setTimeout(function() {
+                const myDiv = document.querySelector(".group2");
+                const myDiv1 = document.querySelector(".group3");
+                const myDiv2 = document.querySelector("#titlefilm");
+                myDiv.style.width = "600px"; // Double la largeur
+                myDiv.style.position = "relative"; // Double la largeur
+                myDiv1.style.left = "10%"; // Double la hauteur
+                myDiv2.style.opacity = "1"; // Double la hauteur
+            }, 3000);
+};
+
+        function s2() {
+            var content = document.querySelector('.saisonselect');
+            var modal = document.querySelector('.modal');
+                content.textContent = "Saison 2";
+                modal.style.display = "none";
+            }
+
+        function s1() {
+            var content = document.querySelector('.saisonselect');
+            var modal = document.querySelector('.modal');
+                content.textContent = "Saison 1";
+                modal.style.display = "none";
+            }
+
+        function s3() {
+            var content = document.querySelector('.saisonselect');
+            var modal = document.querySelector('.modal');
+                content.textContent = "Saison 3";
+                modal.style.display = "none";
+            }
+
+        function startvideo() {
+            var video = document.querySelector('#videodiv');
+            var myVideo = document.getElementById("amixemvideo"); 
+                video.style.display = "flex";
+                myVideo.play(); 
+            }
+
+        function opmodal() {
+            var modal = document.querySelector('.modal');
+            if (modal.style.display = "none") {
+                modal.style.display = "flex";
+            }
+        }
+
+        
+
+function playPause() { 
+    var myVideo = document.getElementById("amixemvideo"); 
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+}
+
+function upSound() { 
+    var myVideo = document.getElementById("amixemvideo"); 
+    myVideo.volume = Math.min(1,myVideo.volume + 0.1);
+} 
+
+function downSound() { 
+    var myVideo = document.getElementById("amixemvideo"); 
+    myVideo.volume = Math.max(0,myVideo.volume - 0.1); 
+} 
+
+        function closevid() {
+            var modal = document.querySelector('#videodiv');
+            var myVideo = document.getElementById("amixemvideo"); 
+                modal.style.display = "none";
+                myVideo.pause();
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const maDiv = document.querySelector('.saisonselect');
+            const maDiv2 = document.querySelector('#titlefilm');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        maDiv.style.position = 'sticky';
+                        maDiv.style.top = 40+'px';
+                    }
+                });
+            });
+
+            observer.observe(maDiv2);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const maDiv = document.querySelector('.saisonselect');
+            const maDiv2 = document.querySelector('#titlefilm');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        maDiv.style.position = 'absolute'; // Change la couleur quand la div n'est plus visible
+                        maDiv.style.top = 520+'px';
+                    }
+                });
+            });
+
+            observer.observe(maDiv2);
+        });
+
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="videodiv">
+        <button id="pausebutton" onclick="playPause()"></button>
+    <div id="control">
+        <button id="closebutton" onclick="closevid()">
+            <img id="closeicon" src="close.png" alt="">
+        </button>
+        <button id="upbutton" onclick="upSound()">
+            <img id="upimg" src="volumeup.png" alt="">
+        </button>
+        <button id="downbutton" onclick="downSound()">
+            <img id="downimg" src="volumedown.png" alt="">
+        </button>
+    </div>
+        <video width="1920" height="1080" id="amixemvideo" src="video1.mp4" type="video/mp4"></video>
+    
+        </div>
+
+    <div class="modal">
+        <a id="Saison1" onclick="s1()">Saison 1</a>
+        <a id="Saison2" onclick="s2()">Saison 2</a>
+        <a id="Saison3" onclick="s3()">Saison 3</a>    </div>
+    <div id="background1"></div>
+    <div id="container5">
+        <a class="saisonselect" onclick="opmodal()">Saison 1</a>
+        <H1 id="titlefilm">LOST RIVER</H1>
+        <a id="icon1">
+            <img class="iconimg" src="sun.png" alt="">
+        </a>
+        <a class="group2">
+            <img class="minia" src="https://th.bing.com/th/id/R.c18c61f65bb57c63d6a62b2a58ee4e41?rik=hgby2%2fWRcmJCzQ&riu=http%3a%2f%2ffolkr.fr%2fwp-content%2fuploads%2f2015%2f12%2ftop-20-affiches-films-2015-folkr-lost-river.jpg&ehk=K4%2fgmf6%2b1MQO%2bKEOjSdwlwDunp9LGu7GtWhWEQ0wyYY%3d&risl=&pid=ImgRaw&r=0" alt="">
+        </a>
+        <a class="group3">
+            <img class="minia" src="https://th.bing.com/th/id/R.c18c61f65bb57c63d6a62b2a58ee4e41?rik=hgby2%2fWRcmJCzQ&riu=http%3a%2f%2ffolkr.fr%2fwp-content%2fuploads%2f2015%2f12%2ftop-20-affiches-films-2015-folkr-lost-river.jpg&ehk=K4%2fgmf6%2b1MQO%2bKEOjSdwlwDunp9LGu7GtWhWEQ0wyYY%3d&risl=&pid=ImgRaw&r=0" alt="">
+        </a>
+        <p id="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus laboriosam ea? Dignissimos voluptate molestiae ea minus mollitia iste doloremque vero quisquam magni repellat dolorem eligendi, praesentium expedita eaque corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sint maxime dolorem, placeat eligendi vero deserunt nobis quidem eius maiores aperiam praesentium voluptates saepe at quos tempore quis! A, perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident doloribus consequuntur doloremque facere adipisci, vel quos temporibus distinctio odit molestias pariatur cumque excepturi fugiat nobis accusamus rerum quam natus ad! Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur commodi tempora, quas ad provident ipsum non quasi fuga consequatur esse unde. Debitis molestias sint ut laudantium nobis ipsam sed perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi delectus sapiente dolorum ducimus quibusdam. Exercitationem enim dolores, quibusdam molestias voluptatibus est aliquam corporis repudiandae iure temporibus commodi. Nulla, voluptatum laborum?</p>
+    </div>
+    <div id="container4">
+        <div id="test"></div>
+        <a id="like" onclick="likeclick()">
+            <img class="likeimg" src="pouce.png" alt="">
+        </a>
+        <a id="play" onclick="startvideo()">Play</a>
+        </div>
+        <a onclick="favclick()" id="fav">
+            <img class="favimg" src="fav.png" alt="">
+        </a>
+        <a id="retour" href="index2.html">Retour</a>
+    </div>
+</body>
+</html>
